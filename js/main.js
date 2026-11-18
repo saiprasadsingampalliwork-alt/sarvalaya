@@ -1,6 +1,37 @@
 (function () {
   "use strict";
 
+  var themeToggle = document.querySelector("[data-theme-toggle]");
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    var dark = theme === "dark";
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", dark ? "true" : "false");
+      themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    }
+    if (themeMeta) {
+      themeMeta.setAttribute("content", dark ? "#2B0A0F" : "#F7F1E6");
+    }
+  }
+
+  applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      try {
+        localStorage.setItem("sarvalaya-theme", next);
+      } catch (error) {}
+    });
+  }
+
   var newsletter = document.querySelector("[data-newsletter]");
   if (newsletter) {
     var status = newsletter.querySelector("[data-newsletter-status]");

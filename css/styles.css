@@ -20,8 +20,39 @@
   --card-line: #E4D3B4;
   --saffron-hover: #D4893A;
   --footer-muted: #7A6556;
+  --heading: #4A3428;
+  --body: #4A3428;
+  --on-saffron: #4A3428;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Mukta", Arial, sans-serif;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --ground: #2B0A0F;
+  --band: #3A0E15;
+  --gold: #E3B552;
+  --saffron: #E8891D;
+  --cream: #FFF4DE;
+  --card: #FFF9EC;
+  --ink: #3A1416;
+  --price: #8A2A12;
+  --line: #6B2A22;
+  --parchment: #F6E7C8;
+  --deep: #4A1218;
+  --ember: #7A1F14;
+  --copper: #C9741B;
+  --glow: #FFE9B0;
+  --halo-mid: #F4C46A;
+  --maroon: #5A1A12;
+  --muted: #6B3A2A;
+  --card-line: #E3C98B;
+  --saffron-hover: #F3A340;
+  --footer-muted: #D9C6A0;
+  --heading: #FFF4DE;
+  --body: #F6E7C8;
+  --on-saffron: #2B0A0F;
+  color-scheme: dark;
 }
 
 *,
@@ -40,7 +71,7 @@ body {
   font-size: 16px;
   line-height: normal;
   background: var(--ground);
-  color: var(--ink);
+  color: var(--body);
 }
 
 img,
@@ -138,13 +169,13 @@ a {
 h1 {
   font-size: 68px;
   line-height: 1.05;
-  color: var(--ink);
+  color: var(--heading);
 }
 
 h2 {
   font-size: 44px;
   text-align: center;
-  color: var(--ink);
+  color: var(--heading);
 }
 
 .sub {
@@ -179,7 +210,7 @@ h2 {
   padding: 15px 30px;
   min-height: 20px;
   background: var(--saffron);
-  color: var(--ink);
+  color: var(--on-saffron);
   border: 0;
 }
 
@@ -190,7 +221,7 @@ h2 {
 
 .btn:hover {
   background: var(--saffron-hover);
-  color: var(--ink);
+  color: var(--on-saffron);
   transform: translateY(-2px);
 }
 
@@ -338,7 +369,7 @@ h2 {
   border: 0;
   border-radius: 50%;
   background: var(--saffron);
-  color: var(--ink);
+  color: var(--on-saffron);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -471,6 +502,44 @@ h2 {
   gap: 12px 32px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.header-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
 }
 
 .logo {
@@ -1182,5 +1251,88 @@ h2 {
   .hero-art {
     flex-basis: 100%;
     min-height: 280px;
+  }
+}
+
+html[data-theme="dark"] .announcement {
+  background: var(--gold);
+  color: var(--ground);
+}
+
+html[data-theme="dark"] .section.hero {
+  background-color: #2b0a0f;
+  background-image:
+    linear-gradient(90deg, rgba(43, 10, 15, 0.94) 0%, rgba(43, 10, 15, 0.82) 36%, rgba(43, 10, 15, 0.42) 68%, rgba(43, 10, 15, 0.28) 100%),
+    url("../assets/hero-banner.jpg");
+}
+
+html[data-theme="dark"] .mantra {
+  background: linear-gradient(90deg, var(--deep), var(--ember), var(--deep));
+}
+
+html[data-theme="dark"] .mantra-text {
+  color: var(--cream);
+}
+
+html[data-theme="dark"] .deity-mark {
+  background: radial-gradient(circle, var(--deep) 0%, var(--ground) 100%);
+}
+
+html[data-theme="dark"] .deity:hover .deity-mark {
+  box-shadow: 0 0 0 6px rgba(227, 181, 82, 0.16);
+}
+
+html[data-theme="dark"] .product {
+  border-color: #d7b56a;
+  box-shadow: 0 12px 28px rgba(43, 10, 15, 0.28);
+}
+
+html[data-theme="dark"] .product .badge {
+  background: var(--ground);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+html[data-theme="dark"] .faq {
+  background: var(--ground);
+}
+
+html[data-theme="dark"] .faq p {
+  color: var(--parchment);
+}
+
+html[data-theme="dark"] .section.festival {
+  background: linear-gradient(135deg, var(--ember) 0%, var(--copper) 100%);
+  color: var(--cream);
+}
+
+html[data-theme="dark"] .festival .eyebrow {
+  color: var(--glow);
+}
+
+html[data-theme="dark"] .festival p:not(.eyebrow) {
+  color: var(--cream);
+}
+
+html[data-theme="dark"] .btn-ground,
+html[data-theme="dark"] .btn-ground:hover {
+  background: var(--ground);
+  color: var(--glow);
+}
+
+html[data-theme="dark"] .newsletter-panel {
+  background: radial-gradient(circle at 50% 0%, var(--maroon) 0%, var(--ground) 85%);
+}
+
+html[data-theme="dark"] .form-status {
+  color: var(--cream);
+}
+
+@media (max-width: 800px) {
+  html[data-theme="dark"] .section.hero {
+    background-image:
+      linear-gradient(180deg, #2b0a0f 0%, #2b0a0f 64%, rgba(43, 10, 15, 0.5) 82%, rgba(43, 10, 15, 0.28) 100%),
+      url("../assets/hero-banner.jpg");
+    background-position: 70% bottom;
   }
 }

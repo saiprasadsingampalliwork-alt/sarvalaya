@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-label="Golden mandala with Om symbol">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#E8C49A" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#F7F1E6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="210" cy="210" r="205" fill="url(#g)"/>
+  <g fill="none" stroke="#C4A15A" stroke-width="1.2">
+    <circle cx="210" cy="210" r="190"/>
+    <circle cx="210" cy="210" r="150" stroke-dasharray="3 7"/>
+    <circle cx="210" cy="210" r="110"/>
+    <g>
+      <ellipse cx="210" cy="82" rx="26" ry="52"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(45 210 210)"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(90 210 210)"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(135 210 210)"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(180 210 210)"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(225 210 210)"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(270 210 210)"/>
+      <ellipse cx="210" cy="82" rx="26" ry="52" transform="rotate(315 210 210)"/>
+    </g>
+  </g>
+  <circle cx="210" cy="210" r="72" fill="#F6E4C4" stroke="#D4893A" stroke-width="2"/>
+  <text x="210" y="238" text-anchor="middle" font-size="84" fill="#7E5C28" font-family="Cormorant Garamond, Georgia, serif">ॐ</text>
+</svg>
